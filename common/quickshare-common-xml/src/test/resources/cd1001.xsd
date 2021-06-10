@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="XMLDATA">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="HEAD" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MAIN" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="YYDM" type="xs:string"/>
+                            <xs:element name="YWLX" type="xs:string"/>
+                            <xs:element name="SYKSBM" type="xs:string"/>
+                            <xs:element name="SSKSLX" type="xs:string"/>
+                            <xs:element name="HZZJ" type="xs:string"/>
+                            <xs:element name="BLH" type="xs:string"/>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

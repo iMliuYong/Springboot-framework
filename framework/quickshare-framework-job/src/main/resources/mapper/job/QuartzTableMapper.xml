@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quickshare.framework.job.mapper.QuartzTableMapper">
+
+    <select id="initTable" databaseId="sqlserver">
+        if not exists (select 1 FROM  sysobjects WHERE  id = object_id('SYS_JOB') AND type = 'U')
+        create table SYS_JOB (
+           JOB_ID               varchar(200)          not null,
+           JOB_NAME             varchar(200)         null,
+           JOB_GROUP            varchar(200)         null,
+           DESCRIPTION          varchar(250)         null,
+           IS_ENABLED           bit                  null,
+           JLZT                 varchar(1)           not null,
+           constraint PK_SYS_JOB primary key (JOB_ID)
+        );
+        if not exists (select 1 FROM  sysobjects WHERE  id = object_id('SYS_JOB_TRIGGERS') AND type = 'U')
+        create table SYS_JOB_TRIGGERS (
+           TRIGGER_ID           varchar(200)          not null,
+           JOB_ID               varchar(200)          not null,
+           TRIGGER_NAME         varchar(200)         null,
+           TRIGGER_GROUP        varchar(200)         null,
+           CRON_EXPRESSION      varchar(120)         not null,
+           DESCRIPTION          varchar(250)         null,
+           JOB_DATA             text                 null,
+           IS_ENABLED           bit                  null,
+           JLZT                 varchar(1)           not null,
+           constraint PK_SYS_JOB_TRIGGERS primary key (TRIGGER_ID)
+        )
+    </select>
+
+    <select id="initTable" databaseId="mysql">
+        create table if not exists SYS_JOB (
+           JOB_ID               varchar(200)         not null,
+           JOB_NAME             varchar(200)         null,
+           JOB_GROUP            varchar(200)         null,
+           DESCRIPTION          varchar(250)         null,
+           IS_ENABLED           bit                  null,
+           constraint PK_SYS_JOB primary key (JOB_ID)
+        );
+        create table if not exists SYS_JOB_TRIGGERS (
+           TRIGGER_ID           varchar(200)          not null,
+           JOB_ID               varchar(200)          not null,
+           TRIGGER_NAME         varchar(200)         null,
+           TRIGGER_GROUP        varchar(200)         null,
+           CRON_EXPRESSION      varchar(120)         not null,
+           DESCRIPTION          varchar(250)         null,
+           JOB_DATA             text                 null,
+           IS_ENABLED           bit                  null,
+           constraint PK_SYS_JOB_TRIGGERS primary key (TRIGGER_ID)
+        )
+    </select>
+</mapper>

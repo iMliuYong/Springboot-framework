@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quickshare-framework-parent</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+        <relativePath>../../pom-parent.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>quickshare-restapi-starter</artifactId>
+    <version>${restapi.starter.version}</version>
+    <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-app-starter</artifactId>
+            <version>${app.starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-core</artifactId>
+            <version>${framework.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-log</artifactId>
+            <version>${framework.log.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-jackson</artifactId>
+            <version>${dependency.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-jakarta</artifactId>
+            <version>${dependency.jakarta.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-log</artifactId>
+            <version>${dependency.log.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-undertow</artifactId>
+            <version>${dependency.undertow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-springframework</artifactId>
+            <version>${dependency.springframework.version}</version>
+        </dependency>
+    </dependencies>
+</project>

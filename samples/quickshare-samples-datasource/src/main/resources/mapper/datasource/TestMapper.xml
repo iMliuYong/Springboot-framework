@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quickshare.samples.datasource.mapper.TestMapper">
+
+    <select id="query" resultType="com.quickshare.samples.datasource.bean.TestTable">
+        select idx,col1,convert(varchar(20),opTime,120) as opTime from testTable
+    </select>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quickshare-samples-parent</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+        <relativePath>../samples-parent.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>quickshare-samples-environment</artifactId>
+
+    <properties>
+        <sample.name>environment</sample.name>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-jdbc-sqlserver-starter</artifactId>
+            <version>${jdbc.sqlserver.starter.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-environment</artifactId>
+            <version>${framework.environment.version}</version>
+        </dependency>
+    </dependencies>
+</project>

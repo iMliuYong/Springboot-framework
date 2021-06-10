@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quickshare.framework.job.mapper.QuartzJobMapper">
+
+    <resultMap id="lstJob_Map" type="com.quickshare.framework.job.definition.JobDefinition">
+        <collection property="triggers" ofType="com.quickshare.framework.job.definition.TriggerDefinition"
+                    column="{jobId = id}" select="lstTrigger" />
+    </resultMap>
+
+    <select id="lstJob" resultMap="lstJob_Map">
+        select a.JOB_ID as id,IS_ENABLED as enabled,JOB_NAME as name,DESCRIPTION as memo
+        from SYS_JOB a
+        where a.JLZT='1'
+        <if test='id!=null and id!=""'>
+            and a.JOB_ID = #{id}
+        </if>
+    </select>
+
+    <select id="lstTrigger" resultType="com.quickshare.framework.job.definition.TriggerDefinition">
+        select b.JOB_ID as jobId,b.TRIGGER_ID as id,TRIGGER_NAME as name,b.CRON_EXPRESSION as cron,
+            b.JOB_DATA as data,DESCRIPTION as memo,IS_ENABLED as enabled
+        from SYS_JOB_TRIGGERS b
+        where b.JLZT='1'
+        <if test='jobId!=null and jobId!=""'>
+            and b.JOB_ID = #{jobId}
+        </if>
+        <if test='id!=null and id!=""'>
+            and b.TRIGGER_ID = #{id}
+        </if>
+    </select>
+
+    <insert id="addJob">
+        insert into SYS_JOB ( JOB_ID, JOB_NAME, JOB_GROUP, DESCRIPTION, IS_ENABLED, JLZT )
+        select #{id},#{name},#{group},#{desc},#{state},'1'
+        where not exists(select 1 from SYS_JOB where JOB_ID = #{id})
+    </insert>
+
+    <insert id="addTrigger">
+        insert into SYS_JOB_TRIGGERS ( TRIGGER_ID, JOB_ID, TRIGGER_NAME, CRON_EXPRESSION,
+            DESCRIPTION,JOB_DATA, IS_ENABLED, JLZT)
+        values(#{id},#{jobId},#{name},#{cron},#{memo},#{data},0,'1')
+    </insert>
+
+    <update id="disableJobs">
+        update SYS_JOB set JLZT='0'
+        <if test="ids != null">
+            where JOB_ID not in (<foreach collection="ids" item="id" separator=",">#{id}</foreach>)
+        </if>
+    </update>
+</mapper>

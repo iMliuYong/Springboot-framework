@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quickshare-framework-parent</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+        <relativePath>../../pom-parent.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>quickshare-framework-mongo</artifactId>
+    <version>${framework.mongo.version}</version>
+    <description>MongoDB封装</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-mongo</artifactId>
+            <version>${dependency.mongo.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-springframework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-springboot</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-common-encryptor</artifactId>
+        </dependency>
+    </dependencies>
+</project>

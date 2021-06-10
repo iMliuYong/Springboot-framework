@@ -1,0 +1,29 @@
+<req>
+    <message_id>3f056d40-4d63-4d2d-8f02-506ceb9d57f6</message_id>
+    <message_cont>
+        <input>
+            <FYLIST>
+                <FYID>2020102903184</FYID>
+                <BQID>957</BQID>
+                <BQMC>心血管内科</BQMC>
+                <KSID>978</KSID>
+                <KSMC>手术室</KSMC>
+                <CZY>12</CZY>
+                <CZYXM>邹华</CZYXM>
+                <HisCode>18241</HisCode>
+                <YPSL>1</YPSL>
+            </FYLIST>
+            <FYLIST>
+                <FYID>2020102903184</FYID>
+                <BQID>957</BQID>
+                <BQMC>心血管内科</BQMC>
+                <KSID>978</KSID>
+                <KSMC>手术室</KSMC>
+                <CZY>12</CZY>
+                <CZYXM>邹华</CZYXM>
+                <HisCode>18241</HisCode>
+                <YPSL>1</YPSL>
+            </FYLIST>
+        </input>
+    </message_cont>
+</req>

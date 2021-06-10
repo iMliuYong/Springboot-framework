@@ -1,0 +1,16 @@
+{
+  "BusinessType": "YY001",
+  "HospitalCode": null,
+  "IP": "192.168.0.1",
+  "MAC": "123456789012",
+  "HostName": "**",
+  "aa": 1.230,
+  "Data": [
+    {
+      "Code": "test02",
+      "Name": "测试医院1",
+      "SocialCreditID":"123321",
+      "Address":"江苏常州"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLDATA>
+    <MAIN>
+        <YYDM>医院代码</YYDM>
+        <YWLX>业务类型</YWLX>
+        <SYKSBM>使用科室编码</SYKSBM>
+        <SSKSLX>使用科室类型</SSKSLX>
+        <HZZJ>患者主键</HZZJ>
+        <BLH>病历号</BLH>
+        <BLH1>病历号</BLH1>
+    </MAIN>
+</XMLDATA>

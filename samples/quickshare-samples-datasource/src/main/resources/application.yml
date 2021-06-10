@@ -1,0 +1,38 @@
+logging:
+  file:
+    path: E:/tfs2018/JavaTools/git/quickshare-framework/logs/log
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1\MYMSSQL;databaseName=dep
+    username: sa
+    password: abc@321
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+app:
+  dbsample:
+    dbsplit:
+      datasource:
+        url: jdbc:sqlserver://127.0.0.1\MYMSSQL;databaseName=dep
+        username: sa
+        password: abc@321
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      accord:
+        type: com.quickshare.samples.datasource.bean.User
+        method: getCustomerId
+  db1:
+    datasource:
+      url: jdbc:sqlserver://127.0.0.1\MYMSSQL;databaseName=testdb1
+      username: sa
+      password: abc@321
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    datasource-slave:
+      url: jdbc:sqlserver://127.0.0.1\MYMSSQL;databaseName=testdb1-1
+      username: sa
+      password: abc@321
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  db2:
+    datasource:
+      url: jdbc:sqlserver://127.0.0.1\MYMSSQL;databaseName=testdb2
+      username: sa
+      password: abc@321
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

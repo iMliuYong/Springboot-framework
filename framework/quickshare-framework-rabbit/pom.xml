@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quickshare-framework-parent</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+        <relativePath>../../pom-parent.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>quickshare-framework-rabbit</artifactId>
+    <version>${framework.rabbit.version}</version>
+    <description>RabbitMQ使用框架</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-mq-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-mq-rabbit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-datasource-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-springboot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-springframework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-common-encryptor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-test-starter</artifactId>
+            <version>${framework.test.version}</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-common-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-common-json</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

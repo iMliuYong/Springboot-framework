@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quickshare-framework-parent</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+        <relativePath>../pom-parent.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>quickshare-samples-parent</artifactId>
+    <version>2.0.0</version>
+    <modules>
+        <module>quickshare-samples-log</module>
+        <module>quickshare-samples-job</module>
+        <module>quickshare-samples-json</module>
+        <module>quickshare-samples-restapi</module>
+        <module>quickshare-samples-cache</module>
+        <module>quickshare-samples-environment</module>
+        <module>quickshare-samples-mongo</module>
+        <module>quickshare-samples-rabbit</module>
+        <module>quickshare-samples-ws</module>
+        <module>quickshare-samples-socket</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <sample.name></sample.name>
+        <lib.dir>../apps/${sample.name}/lib</lib.dir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-restapi-starter</artifactId>
+            <version>${restapi.starter.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-rabbit</artifactId>
+            <version>${framework.rabbit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-framework-ws</artifactId>
+            <version>${framework.ws.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.quickshare</groupId>
+            <artifactId>quickshare-dependencies-cxf</artifactId>
+            <version>${dependency.cxf.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${build.plugin.dependency.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>../apps/${sample.name}/lib</outputDirectory>
+                            <stripVersion>true</stripVersion>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${build.plugin.resources.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>../apps/${sample.name}/config</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <includes>
+                                        <include>*.*</include>
+                                    </includes>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-bat</id>
+                        <!-- here the phase you need -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>../apps/${sample.name}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>/</directory>
+                                    <includes>
+                                        <include>*.bat</include>
+                                    </includes>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- copy文件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>${build.plugin.antrun.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo message="compile classpath: ${lib.dir}"/>
+                                <!-- ${project.build.directory}这个是tartget目录 -->
+                                <!-- 这句话的意思是将${artifactId}-${version}.zip包里面的内容复制到 -->
+                                <copy overwrite="true"
+                                      todir="${lib.dir}"
+                                      file="${project.build.directory}/${project.artifactId}.jar"/>
+                                <delete>
+                                    <fileset dir="${lib.dir}" includes="*.pom"/>
+                                </delete>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

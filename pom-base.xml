@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>framework/quickshare-framework-discovery</module>
+    </modules>
+    <parent>
+        <artifactId>quickshare-dependencies-base</artifactId>
+        <groupId>com.quickshare</groupId>
+        <version>2.0.0</version>
+    </parent>
+
+    <groupId>com.quickshare</groupId>
+    <artifactId>quickshare-framework-base</artifactId>
+    <version>2.0.0</version>
+
+    <name>QuickShare framework base pom</name>
+    <description>快享java后端开发框架base。</description>
+    <url>http://tfs2018-web.winning.com.cn:8080/tfs/QuickShare/JavaTools/_git/quickshare-framework</url>
+    <organization>
+        <name>QuickShare</name>
+        <url>http://www.kxhealth.net/</url>
+    </organization>
+
+    <properties>
+        <!--mudules-->
+        <app.starter.version>2.0.0</app.starter.version>
+        <framework.core.version>2.0.0</framework.core.version>
+        <framework.datasource.version>2.1.2</framework.datasource.version>
+        <framework.cache.version>2.0.0</framework.cache.version>
+        <framework.environment.version>2.0.0</framework.environment.version>
+        <framework.log.version>2.0.1</framework.log.version>
+        <framework.job.version>2.0.0</framework.job.version>
+        <framework.json.version>2.0.0</framework.json.version>
+        <framework.mongo.version>2.0.0</framework.mongo.version>
+        <framework.rabbit.version>2.0.0</framework.rabbit.version>
+        <framework.web.version>2.0.0</framework.web.version>
+        <framework.file.version>2.0.0</framework.file.version>
+        <framework.test.version>2.0.0</framework.test.version>
+        <framework.ws.version>2.0.0</framework.ws.version>
+        <framework.socket.version>2.0.0</framework.socket.version>
+        <framework.discovery.version>2.0.0</framework.discovery.version>
+        <!--starters-->
+        <restapi.starter.version>2.0.0</restapi.starter.version>
+        <rabbitmq.starter.version>2.0.0</rabbitmq.starter.version>
+        <jdbc.sqlserver.starter.version>2.1.0</jdbc.sqlserver.starter.version>
+        <cache.ehcache.starter.version>2.0.0</cache.ehcache.starter.version>
+        <!--utils-->
+        <common.encryptor.version>2.0.0</common.encryptor.version>
+        <common.json.version>2.0.0</common.json.version>
+        <common.bean.version>2.0.1</common.bean.version>
+        <common.reflect.version>2.0.0</common.reflect.version>
+        <common.messagecode.version>2.0.1</common.messagecode.version>
+        <common.utils.version>2.0.1</common.utils.version>
+        <common.xml.version>2.0.0</common.xml.version>
+        <common.io.version>2.0.0</common.io.version>
+        <!--runable-->
+        <runable.encryptor.version>2.0.0</runable.encryptor.version>
+    </properties>
+</project>

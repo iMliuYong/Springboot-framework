@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLDATA>
+    <HEAD/>
+    <MAIN>
+        <YYDM>医院代码</YYDM>
+        <KSBM>科室编码</KSBM>
+        <KSLX>科室类型</KSLX>
+        <TM>消毒包条码</TM>
+    </MAIN>
+</XMLDATA>
